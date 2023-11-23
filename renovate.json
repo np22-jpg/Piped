@@ -7,6 +7,10 @@
       ":semanticCommits",
       ":automergeMinor"
     ],
+    "lockFileMaintenance": {
+      "enabled": true,
+      "automerge": true
+    },
     "git-submodules": {
       "enabled": true
     }
