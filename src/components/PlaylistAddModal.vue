@@ -1,7 +1,7 @@
 <template>
     <ModalComponent @close="$emit('close')">
         <h4 v-t="'actions.select_playlist'" class="mb-2" />
-        <select v-model="selectedPlaylist" class="select w-full mb-2">
+        <select v-model="selectedPlaylist" class="select mb-2 w-full">
             <option v-for="playlist in playlists" :key="playlist.id" :value="playlist.id" v-text="playlist.name" />
         </select>
         <div class="flex justify-end" style="gap: var(--efy_gap0)">

@@ -2,7 +2,7 @@
     <div
         ref="container"
         data-shaka-player-container
-        class="relative max-h-screen w-full flex justify-center efy_trans_filter_off"
+        class="efy_trans_filter_off relative max-h-screen w-full flex justify-center"
         :class="{ 'player-container': !isEmbed }"
     >
         <video ref="videoEl" class="w-full" data-shaka-player :autoplay="shouldAutoPlay" :loop="selectedAutoLoop" />
