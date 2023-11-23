@@ -5,8 +5,11 @@
       "config:best-practices",
       ":automergeDigest",
       ":semanticCommits",
-      ":automergeMinor"
+      ":automergeMinor",
+      ":enableVulnerabilityAlerts",
+      ":rebaseStalePrs"
     ],
+    "includeForks": true,
     "packageRules": [
       {
         "description": "Automerge updates",
