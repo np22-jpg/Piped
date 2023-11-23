@@ -1,24 +1,13 @@
 {
-    "platformAutomerge": true,
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-      "config:base",
-      "helpers:pinGitHubActionDigests",
-      ":semanticCommits"
+      "config:recommended",
+      "config:best-practices",
+      ":automergeDigest",
+      ":semanticCommits",
+      ":automergeMinor"
     ],
-    "lockFileMaintenance": {
-      "enabled": true,
-      "automerge": true
-    },
-    "packageRules": [
-      {
-        "description": "Automerge updates",
-        "matchUpdateTypes": [
-          "minor",
-          "patch"
-        ],
-        "automerge": true
-      }
-    ],
-    "includeForks": true
+    "git-submodules": {
+      "enabled": true
+    }
   }
