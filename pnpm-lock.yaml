@@ -15,8 +15,8 @@ dependencies:
     specifier: 6.4.2
     version: 6.4.2
   '@fortawesome/vue-fontawesome':
-    specifier: 3.0.3
-    version: 3.0.3(@fortawesome/fontawesome-svg-core@6.4.2)(vue@3.3.8)
+    specifier: 3.0.5
+    version: 3.0.5(@fortawesome/fontawesome-svg-core@6.4.2)(vue@3.3.8)
   buffer:
     specifier: 6.0.3
     version: 6.0.3
@@ -120,7 +120,7 @@ devDependencies:
     version: 3.0.3
   unocss:
     specifier: 0.55.6
-    version: 0.55.6(postcss@8.4.29)(rollup@2.79.1)(vite@4.4.9)
+    version: 0.55.6(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9)
   vite:
     specifier: 4.4.9
     version: 4.4.9(lightningcss@1.21.7)(terser@5.19.3)
@@ -1594,8 +1594,8 @@ packages:
       '@fortawesome/fontawesome-common-types': 6.4.2
     dev: false
 
-  /@fortawesome/vue-fontawesome@3.0.3(@fortawesome/fontawesome-svg-core@6.4.2)(vue@3.3.8):
-    resolution: {integrity: sha512-KCPHi9QemVXGMrfuwf3nNnNo129resAIQWut9QTAMXmXqL2ErABC6ohd2yY5Ipq0CLWNbKHk8TMdTXL/Zf3ZhA==}
+  /@fortawesome/vue-fontawesome@3.0.5(@fortawesome/fontawesome-svg-core@6.4.2)(vue@3.3.8):
+    resolution: {integrity: sha512-isZZ4+utQH9qg9cWxWYHQ9GwI3r5FeO7GnmzKYV+gbjxcptQhh+F99iZXi1Y9AvFUEgy8kRpAdvDlbb3drWFrw==}
     peerDependencies:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       vue: '>= 3.0.0 < 4'
@@ -2108,7 +2108,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.55.6(postcss@8.4.29):
+  /@unocss/postcss@0.55.6(postcss@8.4.31):
     resolution: {integrity: sha512-7/+nBNLGN0okZPfxCR115b5EQunWrtjyEC0nRS9/Ls5u8fwwkq05X5qUeqDLzVR/iSpQpk+4Ij9cKjsMD540ig==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2119,7 +2119,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      postcss: 8.4.29
+      postcss: 8.4.31
     dev: true
 
   /@unocss/preset-attributify@0.55.6:
@@ -4944,7 +4944,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.55.6(postcss@8.4.29)(rollup@2.79.1)(vite@4.4.9):
+  /unocss@0.55.6(postcss@8.4.31)(rollup@2.79.1)(vite@4.4.9):
     resolution: {integrity: sha512-Wg1pWeWleb/U6cpL0R1CjbyQVKkFpxygPwQYfvUAAg2BP5ocXrw2TLURY/giMXHPUWzZfChdJFBs4XSVHe+3aQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -4960,7 +4960,7 @@ packages:
       '@unocss/cli': 0.55.6(rollup@2.79.1)
       '@unocss/core': 0.55.6
       '@unocss/extractor-arbitrary-variants': 0.55.6
-      '@unocss/postcss': 0.55.6(postcss@8.4.29)
+      '@unocss/postcss': 0.55.6(postcss@8.4.31)
       '@unocss/preset-attributify': 0.55.6
       '@unocss/preset-icons': 0.55.6
       '@unocss/preset-mini': 0.55.6
