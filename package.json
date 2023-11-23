@@ -7,7 +7,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "format": "prettier -w --ignore-path .gitignore **/**.{js,vue,json}",
-        "lint": "eslint --fix --color --ignore-path .gitignore --ext .js,.vue ."
+        "lint": "eslint --fix --color --ignore-path .gitignore --ignore-path .eslintignore --ext .js,.vue ."
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "6.4.2",
