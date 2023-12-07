@@ -22,7 +22,7 @@
     "automerge": true
   },
   "git-submodules": {
-    "enabled": true,
+    "enabled": false,
     "automerge": true
   },
   "github-actions": {
