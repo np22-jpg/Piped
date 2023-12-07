@@ -8,17 +8,17 @@ jobs:
             contents: read
             pull-requests: write
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
             - name: Setup pnpm
               uses: pnpm/action-setup@v2
               with:
                   version: latest
             - name: Setup Node.js
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
               with:
                   cache: "pnpm"
             - run: pnpm install
-            - uses: reviewdog/action-eslint@v1
+            - uses: reviewdog/action-eslint@10ca150f51dbbb963467c37a03c873ba1fa75f91 # v1
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   reporter: github-pr-review
