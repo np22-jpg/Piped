@@ -21,16 +21,16 @@
                         loading="lazy"
                         width="36"
                         height="36"
-                        class="efy_shadow_trans h-36rem w-36rem"
+                        class="w-36rem h-36rem efy_shadow_trans"
                     />
                     <button class="pp-text efy_shadow_trans efy_shadow_button_off efy_button_text_off">
                         <span v-text="playlist.uploader" />
-                        <font-awesome-icon v-if="playlist.uploaderVerified" class="ml-1.5" icon="check" />
+                        <font-awesome-icon class="ml-1.5" v-if="playlist.uploaderVerified" icon="check" />
                     </button>
                 </router-link>
                 <button
-                    class="efy_button_text_off efy_shadow_trans efy_shadow_button_off"
                     v-text="`${playlist.videos} ${$t('video.videos')}`"
+                    class="efy_button_text_off efy_shadow_trans efy_shadow_button_off"
                 />
             </div>
             <div class="pp-flex-bookmarks">
@@ -38,7 +38,7 @@
                     <font-awesome-icon class="mr-[5rem]" icon="bookmark" />
                     {{ $t(`actions.${isBookmarked ? "playlist_bookmarked" : "bookmark_playlist"}`) }}
                 </button>
-                <button v-if="authenticated && !isPipedPlaylist" class="btn ml-2 mr-1" @click="clonePlaylist">
+                <button v-if="authenticated && !isPipedPlaylist" class="btn mr-1 ml-2" @click="clonePlaylist">
                     <font-awesome-icon class="mr-[5rem]" icon="clone" />{{ $t("actions.clone_playlist") }}
                 </button>
                 <button class="btn mr-1" @click="downloadPlaylistAsTxt">
@@ -68,6 +68,17 @@
         </div>
     </LoadingIndicatorPage>
 </template>
+
+<style>
+.pp-flex-bookmarks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--efy_gap0);
+}
+.pp-flex-bookmarks > * {
+    margin: 0;
+}
+</style>
 
 <script>
 import ErrorHandler from "./ErrorHandler.vue";
@@ -226,14 +237,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.pp-flex-bookmarks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--efy_gap0);
-}
-.pp-flex-bookmarks > * {
-    margin: 0;
-}
-</style>

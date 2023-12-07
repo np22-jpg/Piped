@@ -1,6 +1,6 @@
 <template>
     <!-- desktop view -->
-    <div v-if="!mobileLayout" class="pp-chapters max-h-75vh min-h-64 flex-col lt-lg:hidden">
+    <div v-if="!mobileLayout" class="pp-chapters flex-col max-h-75vh min-h-64 lt-lg:hidden">
         <h6 aria-label="chapters" title="chapters" class="efy_trans_filter efy_shadow_trans">
             {{ $t("video.chapters") }} - {{ chapters.length }}
         </h6>
@@ -14,8 +14,8 @@
         >
             <div class="flex">
                 <img :src="chapter.image" :alt="chapter.title" />
-                <div class="m-2 flex flex-col">
-                    <span :title="chapter.title" class="font-bold" v-text="index + 1 + '. ' + chapter.title" />
+                <div class="flex flex-col m-2">
+                    <span :title="chapter.title" v-text="index + 1 + '. ' + chapter.title" class="font-bold" />
                     <span class="font-bold" v-text="timeFormat(chapter.start)" />
                 </div>
             </div>

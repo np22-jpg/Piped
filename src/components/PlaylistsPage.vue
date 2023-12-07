@@ -1,6 +1,6 @@
 <template>
     <hr />
-    <div class="flex flex-wrap items-center justify-between" style="gap: var(--efy_gap0)">
+    <div class="flex flex-wrap justify-between items-center" style="gap: var(--efy_gap0)">
         <button
             v-t="'actions.create_playlist'"
             style="height: var(--efy_ratio_width); margin: 0"
@@ -10,8 +10,8 @@
             <button
                 v-if="playlists.length > 0"
                 v-t="'actions.export_to_json'"
-                style="height: var(--efy_ratio_width); margin: 0"
                 @click="exportPlaylists"
+                style="height: var(--efy_ratio_width); margin: 0"
             />
             <input
                 id="fileSelector"
@@ -21,7 +21,7 @@
                 multiple="multiple"
                 @change="importPlaylists"
             />
-            <label v-t="'actions.import_from_json_csv'" for="fileSelector" class="font-bold m-0!" role="button" />
+            <label v-t="'actions.import_from_json_csv'" for="fileSelector" class="m-0! font-bold" role="button" />
         </div>
     </div>
     <hr />
@@ -32,15 +32,15 @@
                 <img class="thumbnail" :src="playlist.thumbnail" alt="thumbnail" />
                 <p
                     style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin: 0 15rem"
-                    class="link flex"
+                    class="flex link"
                     :title="playlist.name"
                     v-text="playlist.name"
                 />
             </router-link>
             <div class="pp-video-card-buttons flex gap-15rem children:m-0" style="flex-wrap: wrap">
                 <button
-                    class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                     v-text="`${playlist.videos} ${$t('video.videos')}`"
+                    class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                 />
                 <button
                     v-t="'actions.edit_playlist'"
@@ -86,25 +86,25 @@
         <div
             v-for="(playlist, index) in bookmarks"
             :key="playlist.playlistId"
-            class="video-card efy_trans_filter efy_shadow_trans pp-bookmark"
+            class="pp-bookmark video-card efy_trans_filter efy_shadow_trans"
         >
             <router-link :to="`/playlist?list=${playlist.playlistId}`">
                 <img class="thumbnail" :src="playlist.thumbnail" alt="thumbnail" />
-                <div class="h-[44rem] flex items-center overflow-hidden">
+                <div class="flex items-center h-[44rem] overflow-hidden">
                     <p class="pp-video-card-title" :title="playlist.name" v-text="playlist.name" />
                 </div>
             </router-link>
             <div class="pp-video-card-buttons flex gap-15rem">
-                <button class="btn pp-color aspect-square" @click.prevent="removeBookmark(index)">
+                <button @click.prevent="removeBookmark(index)" class="btn pp-color aspect-square">
                     <font-awesome-icon icon="bookmark" />
                 </button>
                 <button
-                    class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                     v-text="`${playlist.videos} ${$t('video.videos')}`"
+                    class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                 />
             </div>
             <a :href="playlist.uploaderUrl" class="pp-video-card-channel">
-                <img class="efy_shadow_trans h-36rem w-36rem" :src="playlist.uploaderAvatar" width="36" height="36" />
+                <img class="w-36rem h-36rem efy_shadow_trans" :src="playlist.uploaderAvatar" width="36" height="36" />
                 <div class="pp-text efy_shadow_trans">
                     <span v-text="playlist.uploader" />
                 </div>

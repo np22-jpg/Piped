@@ -86,7 +86,7 @@
                 </label>
             </template>
 
-            <div class="pref flex-col items-start!">
+            <div class="pref items-start! flex-col">
                 <strong>Preferences</strong>
                 <div class="flex flex-wrap" style="gap: var(--efy_gap0)">
                     <button style="height: var(--efy_ratio_width)" @click="showConfirmResetPrefsDialog = true">
@@ -113,7 +113,7 @@
                 />
             </div>
             <!-- options that are visible only when logged in -->
-            <div v-if="authenticated" class="pref flex-col items-start!">
+            <div v-if="authenticated" class="pref items-start! flex-col">
                 <label v-t="'actions.delete_account'" for="txtDeleteAccountPassword" class="font-bold" />
                 <div class="flex flex-wrap" style="gap: var(--efy_gap0)">
                     <input
@@ -129,7 +129,7 @@
                     <button v-t="'actions.delete_account'" class="w-auto" @click="deleteAccount" />
                 </div>
             </div>
-            <div v-if="authenticated" class="pref flex-col items-start!" style="border-bottom: var(--efy_border)">
+            <div v-if="authenticated" class="pref items-start! flex-col" style="border-bottom: var(--efy_border)">
                 <strong>Logout</strong>
                 <div class="flex flex-wrap" style="gap: var(--efy_gap0)">
                     <button v-t="'actions.logout'" class="w-auto" @click="logout" />

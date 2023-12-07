@@ -43,17 +43,17 @@
                     "
                 />
             </div>
-            <div class="h-[44rem] flex items-center overflow-hidden">
-                <p class="pp-video-card-title" v-text="title" />
+            <div class="flex items-center h-[44rem] overflow-hidden">
+                <p v-text="title" class="pp-video-card-title" />
             </div>
         </router-link>
 
         <div class="pp-video-card-buttons">
             <button
                 v-if="item.duration > 0"
+                v-text="timeFormat(item.duration)"
                 class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                 tabindex="-1"
-                v-text="timeFormat(item.duration)"
             />
             <button
                 v-if="item.views >= 0"
@@ -82,8 +82,8 @@
             </router-link>
             <button
                 :title="$t('actions.add_to_playlist')"
-                class="btn efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                 @click="showModal = !showModal"
+                class="btn efy_shadow_trans efy_shadow_button_off efy_button_text_off"
             >
                 <font-awesome-icon icon="circle-plus" />
             </button>
@@ -113,8 +113,8 @@
                 class="efy_shadow_trans efy_shadow_button_off efy_button_text_off"
                 v-text="timeAgo(item.uploaded)"
             />
-            <button v-else-if="item.uploadedDate" tabindex="-1" v-text="item.uploadedDate" />
-            <button v-if="item.isShort" v-t="'video.shorts'" class="pp-color" tabindex="-1" />
+            <button v-else-if="item.uploadedDate" v-text="item.uploadedDate" tabindex="-1" />
+            <button class="pp-color" v-if="item.isShort" v-t="'video.shorts'" tabindex="-1" />
             <button v-else-if="item.duration < 0" v-t="'video.live'" class="pp-color" tabindex="-1" />
             <button v-if="item.watched" v-t="'video.watched'" class="pp-color" tabindex="-1" />
         </div>
@@ -129,17 +129,26 @@
                 v-if="item.uploaderAvatar"
                 :src="item.uploaderAvatar"
                 loading="lazy"
-                class="efy_shadow_trans efy_shadow_button_off mt-0.5 h-36rem w-36rem"
+                class="mt-0.5 w-36rem h-36rem efy_shadow_trans efy_shadow_button_off"
                 width="36"
                 height="36"
             />
             <div class="pp-text efy_shadow_trans efy_shadow_button_off">
                 <span v-text="item.uploaderName" />
-                <font-awesome-icon v-if="item.uploaderVerified" class="ml-1.5" icon="check" />
+                <font-awesome-icon class="ml-1.5" v-if="item.uploaderVerified" icon="check" />
             </div>
         </router-link>
     </div>
 </template>
+
+<style>
+.shorts-img {
+    @apply w-full object-contain;
+}
+.video_item_link {
+    display: block;
+}
+</style>
 
 <script>
 import PlaylistAddModal from "./PlaylistAddModal.vue";
@@ -208,12 +217,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.shorts-img {
-    @apply w-full object-contain;
-}
-.video_item_link {
-    display: block;
-}
-</style>

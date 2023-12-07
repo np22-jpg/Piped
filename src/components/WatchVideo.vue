@@ -10,7 +10,7 @@
         />
     </div>
 
-    <LoadingIndicatorPage :show-content="video && !isEmbed" class="mt-[15rem] w-full">
+    <LoadingIndicatorPage :show-content="video && !isEmbed" class="w-full mt-[15rem]">
         <ErrorHandler v-if="video && video.error" :message="video.message" :error="video.error" />
         <Transition>
             <ToastComponent v-if="shouldShowToast" @dismissed="dismiss">
@@ -108,7 +108,7 @@
                         :playlist-index="index"
                         @close="showShareModal = !showShareModal"
                     />
-                    <button class="btn share-btn flex items-center" @click="showShareModal = !showShareModal">
+                    <button class="btn flex items-center share-btn" @click="showShareModal = !showShareModal">
                         <font-awesome-icon class="mx-1.5 mr-1" icon="fa-share" />
                         <i18n-t keypath="actions.share" tag="strong"></i18n-t>
                     </button>
@@ -163,8 +163,8 @@
                 <label v-t="'actions.show_description'" for="showDesc" />
                 <input id="showComments" v-model="showComments" type="checkbox" @click="toggleComments" />
                 <label
-                    for="showComments"
                     v-text="`${$t('actions.show_comments')} - ${numberFormat(comments?.commentCount)}`"
+                    for="showComments"
                 />
                 <input id="showRecs" v-model="showRecs" type="checkbox" />
                 <label v-t="'actions.show_recommendations'" for="showRecs" />
@@ -195,7 +195,7 @@
                     <router-link
                         v-for="tag in video.tags"
                         :key="tag"
-                        class="efy_trans_filter efy_shadow_trans line-clamp-1"
+                        class="line-clamp-1 efy_trans_filter efy_shadow_trans"
                         :to="`/results?search_query=${encodeURIComponent(tag)}`"
                         >{{ tag }}</router-link
                     >

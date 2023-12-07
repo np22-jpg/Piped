@@ -1,7 +1,7 @@
 <template>
     <div class="toast">
         <slot />
-        <button v-t="'actions.dismiss'" class="m-0 mt-[10rem]" @click="dismiss" />
+        <button v-t="'actions.dismiss'" @click="dismiss" class="m-0 mt-[10rem]" />
     </div>
 </template>
 

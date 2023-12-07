@@ -2,7 +2,7 @@
     <div class="modal">
         <div @click="handleClick">
             <div class="modal-container">
-                <button class="pp-color btn m-0" @click="$emit('close')">
+                <button @click="$emit('close')" class="pp-color btn m-0">
                     <font-awesome-icon icon="xmark" />
                 </button>
                 <slot></slot>

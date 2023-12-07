@@ -1,5 +1,5 @@
 <template>
-    <div class="comment mt-1.5 flex">
+    <div class="comment flex mt-1.5">
         <router-link style="height: fit-content" :to="comment.commentorUrl">
             <img :src="comment.thumbnail" class="comment-avatar" height="48" width="48" loading="lazy" alt="Avatar" />
         </router-link>
@@ -17,7 +17,7 @@
                     />
                 </div>
 
-                <div class="comment-author align-center flex">
+                <div class="comment-author flex align-center">
                     <router-link class="link font-bold" :to="comment.commentorUrl">{{ comment.author }}</router-link>
                     <font-awesome-icon v-if="comment.verified" class="ml-1.5" icon="check" />
                     <div class="comment-meta mb-1.5" v-text="' • ' + comment.commentedTime + ' •'" />
