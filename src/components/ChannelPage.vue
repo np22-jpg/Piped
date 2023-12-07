@@ -2,13 +2,13 @@
     <ErrorHandler v-if="channel && channel.error" :message="channel.message" :error="channel.error" />
     <div v-if="channel" v-show="!channel.error" class="mt-[15rem]">
         <LoadingIndicatorPage :show-content="channel != null && !channel.error">
-            <img v-if="channel.bannerUrl" :src="channel.bannerUrl" class="w-full efy_shadow_trans" loading="lazy" />
+            <img v-if="channel.bannerUrl" :src="channel.bannerUrl" class="efy_shadow_trans w-full" loading="lazy" />
             <div class="pp-channel-page-author flex">
                 <img height="48" width="48" class="efy_shadow_trans" :src="channel.avatarUrl" />
                 <h5 v-text="channel.name" />
                 <font-awesome-icon v-if="channel.verified" class="ml-1.5" icon="check" />
             </div>
-            <p v-text="channel.description" style="margin: 10rem 0 0 0" />
+            <p style="margin: 10rem 0 0 0" v-text="channel.description" />
 
             <div class="pp-channel-tabs">
                 <button
@@ -61,19 +61,6 @@
         </LoadingIndicatorPage>
     </div>
 </template>
-
-<style>
-.pp-channel-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 15rem 0;
-    gap: var(--efy_gap0);
-}
-.pp-channel-tabs :is(button, [role="button"]) {
-    margin: 0;
-    border: 0;
-}
-</style>
 
 <script>
 import ErrorHandler from "./ErrorHandler.vue";
@@ -270,3 +257,16 @@ export default {
     },
 };
 </script>
+
+<style>
+.pp-channel-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15rem 0;
+    gap: var(--efy_gap0);
+}
+.pp-channel-tabs :is(button, [role="button"]) {
+    margin: 0;
+    border: 0;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
     <hr />
     <!-- import / export section -->
-    <div class="flex justify-between flex-wrap m0c">
+    <div class="m0c flex flex-wrap justify-between">
         <div efy_card class="w-auto!" style="padding: var(--efy_padding)">
             <i18n-t keypath="titles.subscriptions" efy_card />{{ ": " + subscriptions.length }}
         </div>
@@ -19,8 +19,8 @@
             <label
                 for="fileSelector"
                 role="button"
-                v-text="`${$t('actions.import_from_json')} (${$t('titles.channel_groups')})`"
                 class="font-bold"
+                v-text="`${$t('actions.import_from_json')} (${$t('titles.channel_groups')})`"
             />
             <button
                 @click="exportGroupsHandler"
@@ -33,12 +33,12 @@
         <button
             v-for="group in channelGroups"
             :key="group.groupName"
-            class="flex gap-[10rem] items-center"
+            class="flex items-center gap-[10rem]"
             :class="{ selected: selectedGroup === group }"
             @click="selectGroup(group)"
         >
             <span v-text="group.groupName !== '' ? group.groupName : $t('video.all')" />
-            <div v-if="group.groupName != '' && selectedGroup == group" class="flex flex-wrap gap-[10rem] items-center">
+            <div v-if="group.groupName != '' && selectedGroup == group" class="flex flex-wrap items-center gap-[10rem]">
                 <div>|</div>
                 <font-awesome-icon class="mx-2" icon="edit" @click="showEditGroupModal = true" />
                 <div>|</div>
@@ -96,32 +96,6 @@
         </div>
     </ModalComponent>
 </template>
-
-<style>
-.pp-subs-cards {
-    display: grid;
-    gap: var(--efy_gap);
-    grid-template-columns: repeat(auto-fill, minmax(240rem, 1fr));
-}
-.pp-subs-card :is(a, span) {
-    -webkit-text-fill-color: var(--efy_text) !important;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.pp-subs-card button {
-    margin-bottom: 0;
-    width: 100%;
-}
-.selected {
-}
-.m0c {
-    gap: var(--efy_gap0);
-}
-.m0c :is(button, [role="button"]) {
-    margin: 0;
-}
-</style>
 
 <script>
 import ModalComponent from "./ModalComponent.vue";
@@ -288,3 +262,29 @@ export default {
     },
 };
 </script>
+
+<style>
+.pp-subs-cards {
+    display: grid;
+    gap: var(--efy_gap);
+    grid-template-columns: repeat(auto-fill, minmax(240rem, 1fr));
+}
+.pp-subs-card :is(a, span) {
+    -webkit-text-fill-color: var(--efy_text) !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.pp-subs-card button {
+    margin-bottom: 0;
+    width: 100%;
+}
+.selected {
+}
+.m0c {
+    gap: var(--efy_gap0);
+}
+.m0c :is(button, [role="button"]) {
+    margin: 0;
+}
+</style>

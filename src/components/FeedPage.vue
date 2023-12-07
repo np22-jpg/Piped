@@ -1,6 +1,6 @@
 <template>
     <hr />
-    <div class="flex flex-wrap align-center" style="place-content: space-between; gap: var(--efy_gap0)">
+    <div class="align-center flex flex-wrap" style="place-content: space-between; gap: var(--efy_gap0)">
         <span class="buttons flex" style="gap: var(--efy_gap0)">
             <router-link role="button" to="/subscriptions">Subscriptions</router-link>
             <a :href="getRssUrl" role="button" class="pp-square">
@@ -8,7 +8,7 @@
             </a>
         </span>
 
-        <div class="filters flex align-center">
+        <div class="align-center filters flex">
             <span class="flex">
                 <label for="filters" v-text="`${$t('actions.filter')}:`" />
                 <select
@@ -47,29 +47,6 @@
         </template>
     </LoadingIndicatorPage>
 </template>
-
-<style>
-.filters {
-    flex-wrap: wrap;
-}
-.filters,
-.filters span {
-    gap: var(--efy_gap0);
-}
-.filters :is(select, label),
-.buttons a[role="button"] {
-    margin: 0 !important;
-    white-space: nowrap;
-    align-items: center;
-    place-content: center;
-}
-.filters span {
-    align-items: center;
-}
-.buttons a[role="button"] {
-    height: var(--efy_ratio_width);
-}
-</style>
 
 <script>
 import VideoItem from "./VideoItem.vue";
@@ -182,3 +159,26 @@ export default {
     },
 };
 </script>
+
+<style>
+.filters {
+    flex-wrap: wrap;
+}
+.filters,
+.filters span {
+    gap: var(--efy_gap0);
+}
+.filters :is(select, label),
+.buttons a[role="button"] {
+    margin: 0 !important;
+    white-space: nowrap;
+    align-items: center;
+    place-content: center;
+}
+.filters span {
+    align-items: center;
+}
+.buttons a[role="button"] {
+    height: var(--efy_ratio_width);
+}
+</style>

@@ -9,10 +9,10 @@
                 <strong v-text="`Selected Subscriptions: ${selectedSubscriptions}`" />
             </div>
             <div efy_select>
-                <input v-model="override" id="import-override" type="checkbox" />
+                <input id="import-override" v-model="override" type="checkbox" />
                 <label for="import-override">Override</label>
             </div>
-            <a class="btn w-auto" @click="handleImport" role="button" style="margin: 0">Import</a>
+            <a class="btn w-auto" role="button" style="margin: 0" @click="handleImport">Import</a>
         </form>
         <br />
         <strong>Importing Subscriptions from YouTube</strong>

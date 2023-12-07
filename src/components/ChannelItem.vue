@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col efy_trans_filter efy_shadow_trans">
+    <div class="efy_trans_filter efy_shadow_trans flex flex-col">
         <router-link
             :to="props.item.url"
-            class="flex items-center p-[10rem] gap-[10rem]"
+            class="flex items-center gap-[10rem] p-[10rem]"
             style="border-bottom: var(--efy_border)"
         >
             <img
@@ -13,8 +13,8 @@
                 width="40"
                 height="40"
             />
-            <div class="flex items-center overflow-hidden pp-text">
-                <p v-text="props.item.name" class="pp-video-card-title p-0!" />
+            <div class="pp-text flex items-center overflow-hidden">
+                <p class="pp-video-card-title p-0!" v-text="props.item.name" />
                 <font-awesome-icon v-if="props.item.verified" class="ml-1.5" icon="check" />
             </div>
         </router-link>

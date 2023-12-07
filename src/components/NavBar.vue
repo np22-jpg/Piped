@@ -1,7 +1,7 @@
 <template>
-    <nav class="pp-nav flex flex-wrap items-center justify-center px-2 sm:px-4 py-2.5 w-full relative">
-        <div class="flex-1 flex justify-start pp-logo">
-            <router-link class="flex font-bold text-3xl items-center font-sans" to="/">
+    <nav class="pp-nav relative w-full flex flex-wrap items-center justify-center px-2 py-2.5 sm:px-4">
+        <div class="pp-logo flex flex-1 justify-start">
+            <router-link class="flex items-center text-3xl font-bold font-sans" to="/">
                 <svg
                     id="svg-logo"
                     version="1.2"
@@ -54,7 +54,7 @@
                 >iped</router-link
             >
         </div>
-        <div class="lt-md:hidden flex flex-1 justify-start" style="position: relative">
+        <div class="flex flex-1 justify-start lt-md:hidden" style="position: relative">
             <input
                 ref="videoSearch"
                 v-model="searchText"
@@ -88,7 +88,7 @@
             <button
                 efy_sidebar_btn="relative, pp-desktop"
                 style="background: transparent; padding: 0; margin: -5rem 0 0 0; border: 0"
-                class="efy_trans_filter_off efy_shadow_button_off"
+                class="efy_shadow_button_off efy_trans_filter_off"
             >
                 <i efy_icon="menu" style="margin: 0" />
             </button>
@@ -96,18 +96,18 @@
     </nav>
 
     <!-- search suggestions for mobile devices -->
-    <div class="w-{full - 4} md:hidden" style="position: relative">
+    <div class="- 4} w-{full md:hidden" style="position: relative">
         <input
             v-model="searchText"
             type="text"
             role="search"
             :title="$t('actions.search')"
             :placeholder="$t('actions.search')"
+            style="margin: 15rem 0 0 0"
             @keyup="onKeyUp"
             @keypress="onKeyPress"
             @focus="onInputFocus"
             @blur="onInputBlur"
-            style="margin: 15rem 0 0 0"
         />
         <span v-if="searchText" class="delete-search" @click="searchText = ''">⨉</span>
     </div>
@@ -119,69 +119,6 @@
     />
     <LoginModal v-if="showLoginModal" @close="showLoginModal = !showLoginModal" />
 </template>
-
-<style>
-.pp-nav {
-    gap: 15rem;
-}
-.pp-nav > .pp-logo > a {
-    font-size: 25rem;
-    font-family: "nunito";
-    background: transparent;
-    margin-left: 5rem;
-}
-.pp-nav > div input {
-    margin: 0 !important;
-    width: 300rem;
-}
-.pp-nav .pp-menu {
-    list-style: none;
-    display: flex;
-    gap: 15rem;
-    margin: 0;
-    padding: 0;
-}
-.pp-nav .pp-menu > * {
-    margin: 0;
-}
-#svg-logo {
-    height: 25rem;
-    width: auto;
-    margin-right: 2rem;
-}
-#svg-logo .a {
-    fill: url(#g1);
-}
-#svg-logo .b {
-    fill: url(#g2);
-}
-#svg-logo .c {
-    fill: url(#g3);
-}
-#svg-logo .d {
-    fill: url(#g4);
-}
-#svg-logo .e {
-    fill: url(#g5);
-}
-.delete-search {
-    position: absolute;
-    display: flex;
-    right: 6rem;
-    top: 5.5rem;
-    height: 30rem;
-    width: 30rem;
-    cursor: pointer;
-    background-color: var(--efy_bg1);
-    border: var(--efy_border);
-    border-radius: var(--efy_radius0);
-    place-content: center;
-    font-size: 20rem;
-    color: var(--efy_text);
-    flex-wrap: wrap;
-    align-content: center;
-}
-</style>
 
 <script>
 import SearchSuggestions from "./SearchSuggestions.vue";
@@ -274,3 +211,66 @@ export default {
     },
 };
 </script>
+
+<style>
+.pp-nav {
+    gap: 15rem;
+}
+.pp-nav > .pp-logo > a {
+    font-size: 25rem;
+    font-family: "nunito";
+    background: transparent;
+    margin-left: 5rem;
+}
+.pp-nav > div input {
+    margin: 0 !important;
+    width: 300rem;
+}
+.pp-nav .pp-menu {
+    list-style: none;
+    display: flex;
+    gap: 15rem;
+    margin: 0;
+    padding: 0;
+}
+.pp-nav .pp-menu > * {
+    margin: 0;
+}
+#svg-logo {
+    height: 25rem;
+    width: auto;
+    margin-right: 2rem;
+}
+#svg-logo .a {
+    fill: url(#g1);
+}
+#svg-logo .b {
+    fill: url(#g2);
+}
+#svg-logo .c {
+    fill: url(#g3);
+}
+#svg-logo .d {
+    fill: url(#g4);
+}
+#svg-logo .e {
+    fill: url(#g5);
+}
+.delete-search {
+    position: absolute;
+    display: flex;
+    right: 6rem;
+    top: 5.5rem;
+    height: 30rem;
+    width: 30rem;
+    cursor: pointer;
+    background-color: var(--efy_bg1);
+    border: var(--efy_border);
+    border-radius: var(--efy_radius0);
+    place-content: center;
+    font-size: 20rem;
+    color: var(--efy_text);
+    flex-wrap: wrap;
+    align-content: center;
+}
+</style>
