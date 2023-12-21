@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm \
     pnpm install --prefer-offline && \
     pnpm build && ./localizefonts.sh
 
-FROM nginx:alpine@sha256:ba48c86adff12f1849920b6175c328b58b589f68feb082de8677309718945a56
+FROM nginx:alpine@sha256:a59278fd22a9d411121e190b8cec8aa57b306aa3332459197777583beb728f59
 
 COPY --from=build /app/dist/ /usr/share/nginx/html/
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
