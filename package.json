@@ -50,7 +50,7 @@
         "lightningcss": "1.23.0",
         "prettier": "3.2.5",
         "unocss": "0.58.5",
-        "vite": "5.0.12",
+        "vite": "5.1.0",
         "vite-plugin-eslint": "1.8.1",
         "vite-plugin-pwa": "0.17.5",
         "workbox-window": "7.0.0"
