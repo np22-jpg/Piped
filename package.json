@@ -10,9 +10,9 @@
         "lint": "eslint --fix --color --ignore-path .gitignore --ignore-path .eslintignore --ext .js,.vue ."
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "6.5.1",
-        "@fortawesome/free-brands-svg-icons": "6.5.1",
-        "@fortawesome/free-solid-svg-icons": "6.5.1",
+        "@fortawesome/fontawesome-svg-core": "6.5.2",
+        "@fortawesome/free-brands-svg-icons": "6.5.2",
+        "@fortawesome/free-solid-svg-icons": "6.5.2",
         "@fortawesome/vue-fontawesome": "3.0.6",
         "buffer": "6.0.3",
         "dompurify": "3.0.11",
